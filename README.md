@@ -18,3 +18,4 @@ rails generate model category category_id:integer name:string
 ``
 
 ### 掲示板
+

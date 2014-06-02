@@ -54,6 +54,7 @@ gem 'thin'
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
 gem 'execjs'
+gem 'devise'
 
 group :development do
   gem 'better_errors'

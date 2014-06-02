@@ -1,6 +1,13 @@
 OkinawaRamenMap::Application.routes.draw do
   root 'pages#index'
+  get 'pages/login'
+  get 'pages/logout'
+  get 'pages/about'
+
   resource :pages
+
+  devise_for :users
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -85,7 +85,13 @@
               <li><%= link_to "人気のラーメン店", "/path1"  %></li>
               <li><%= link_to "地域のラーメン店", "/path2"  %></li>
               <li><%= link_to "ジャンルからラーメン店を探す", "/path1"  %></li>
-              <li><%= link_to "ユーザ登録", "/path1"  %></li>
+              <% if user_signed_in? %>
+                  <li><%= link_to 'プロフィール編集', edit_user_registration_path, :class => 'navbar-link' %></li>
+                  <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
+              <% else %>
+                  <li><%= link_to "ユーザ登録", new_user_registration_path, :class => 'navbar-link'  %></li>
+                  <li><%= link_to "ログイン", new_user_session_path, :class => 'navbar-link'  %></li>
+              <% end %>
               <li><%= link_to "掲載方法", "/pages/add"  %></li>
               <li><%= link_to "このサイトについて", "/pages/about"  %></li>
               <li><%= link_to "お問い合わせ", "/pages/contact"  %></li>

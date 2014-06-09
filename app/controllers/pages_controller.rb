@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def index
-
+    @shops = Shop.all
   end
   def login
 

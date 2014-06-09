@@ -1,4 +1,6 @@
 OkinawaRamenMap::Application.routes.draw do
+  resources :shops
+
   root 'pages#index'
   get 'pages/login'
   get 'pages/logout'

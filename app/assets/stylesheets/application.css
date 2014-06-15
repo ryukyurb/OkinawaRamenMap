@@ -11,3 +11,74 @@
  *= require_self
  *= require_tree .
  */
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    margin: 0px;
+    padding: 0px;
+}
+.wrapper {
+    max-width: 1080px;
+    width: 1080px;
+    padding: 0px;
+    margin: 0px auto;
+    clear:both;
+}
+.header{
+    background-color: #673300;
+    height:110px;
+    margin: 0px;
+    padding: 0px;
+}
+.logo{
+    width:312px;
+    float: left;
+}
+.logo h1{
+    margin: 0px;
+    padding: 0px;
+}
+.logo h1 a{
+    text-indent: -999999px;
+    width: 312px;
+    height: 110px;
+    background-image: url('../images/logo.png');
+    display: block;
+    margin: 0px;
+    padding: 0px;
+}
+.banner{
+    width: 768px;
+    float: left;
+    padding: 10px 0px;
+    margin: 0px auto;
+    height: 90px;
+    text-align: center;
+}
+.sideleft{
+    float: left;
+    width:180px;
+}
+.sideright{
+    float: left;
+    width:300px;
+}
+.main{
+    float: left;
+    width:580px;
+    margin: 0px 10px;
+}
+.main h1{
+    font-size: 100%;
+    padding:5px;
+    line-height: 1.0em;
+    border: 1px solid #000;
+}
+footer{
+    clear:both;
+    border-top: 1px solid #000;
+    margin: 20px 0px;
+    padding: 20px 0px;
+}

@@ -37,7 +37,14 @@
     <%= javascript_include_tag "application" %>
   </head>
   <body>
-
+    <header class="header">
+      <div class="wrapper">
+      <div class="logo"><h1><a href="">沖縄ラーメン屋マップ</a></h1></div>
+      <div class="banner"><script type="text/javascript"><!--
+      amazon_ad_tag = "webcrafts-22"; amazon_ad_width = "728"; amazon_ad_height = "90"; amazon_ad_logo = "hide"; amazon_ad_link_target = "new"; amazon_ad_price = "retail"; amazon_ad_discount = "remove";//--></script>
+        <script type="text/javascript" src="http://ir-jp.amazon-adsystem.com/s/ads.js"></script></div>
+      </div>
+    </header>
     <div class="navbar navbar-fluid-top">
       <div class="navbar-inner">
         <div class="container-fluid">
@@ -65,43 +72,53 @@
         </div>
       </div>
     </div>
-
-    <div class="container-fluid">
-      <div class="row-fluid">
-        <div class="span9">
-          <%= bootstrap_flash %>
-          <% if notice %>
-              <p class="alert alert-notice"><%= notice %></p>
-          <% end %>
-          <% if alert %>
-              <p class="alert alert-error"><%= alert %></p>
-          <% end %>
-          <%= yield %>
+    <div class="wrapper">
+      <div class="sideleft">
+        <p>
+          <script type="text/javascript"><!--
+          amazon_ad_tag = "webcrafts-22"; amazon_ad_width = "160"; amazon_ad_height = "600"; amazon_ad_logo = "hide"; amazon_ad_link_target = "new"; amazon_ad_price = "retail"; amazon_ad_discount = "remove";//--></script>
+          <script type="text/javascript" src="http://ir-jp.amazon-adsystem.com/s/ads.js"></script>
+        </p>
+      </div>
+      <div class="main">
+        <%= bootstrap_flash %>
+        <% if notice %>
+            <p class="alert alert-notice"><%= notice %></p>
+        <% end %>
+        <% if alert %>
+            <p class="alert alert-error"><%= alert %></p>
+        <% end %>
+        <%= yield %>
+      </div>
+      <div class="sideright">
+        <p><script type="text/javascript"><!--
+        amazon_ad_tag = "webcrafts-22"; amazon_ad_width = "300"; amazon_ad_height = "250"; amazon_ad_logo = "hide"; amazon_ad_link_target = "new"; amazon_ad_price = "retail"; amazon_ad_discount = "remove";//--></script>
+          <script type="text/javascript" src="http://ir-jp.amazon-adsystem.com/s/ads.js"></script></p>
+        <div class="well sidebar-nav">
+          <ul class="nav nav-list">
+            <li class="nav-header">MENU</li>
+            <li><%= link_to "人気のラーメン店", "/path1"  %></li>
+            <li><%= link_to "地域のラーメン店", "/path2"  %></li>
+            <li><%= link_to "ジャンルからラーメン店を探す", "/path1"  %></li>
+            <% if user_signed_in? %>
+                <li><%= link_to 'プロフィール編集', edit_user_registration_path, :class => 'navbar-link' %></li>
+                <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
+            <% else %>
+                <li><%= link_to "ユーザ登録", new_user_registration_path, :class => 'navbar-link'  %></li>
+                <li><%= link_to "ログイン", new_user_session_path, :class => 'navbar-link'  %></li>
+            <% end %>
+            <li><%= link_to "掲載方法", "/pages/add"  %></li>
+            <li><%= link_to "このサイトについて", "/pages/about"  %></li>
+            <li><%= link_to "お問い合わせ", "/pages/contact"  %></li>
+            <li><%= link_to('琉球.rb','https://www.facebook.com/groups/ruby.okinawa/') %></li>
+          </ul>
         </div>
-        <div class="span3">
-          <div class="well sidebar-nav">
-            <ul class="nav nav-list">
-              <li class="nav-header">MENU</li>
-              <li><%= link_to "人気のラーメン店", "/path1"  %></li>
-              <li><%= link_to "地域のラーメン店", "/path2"  %></li>
-              <li><%= link_to "ジャンルからラーメン店を探す", "/path1"  %></li>
-              <% if user_signed_in? %>
-                  <li><%= link_to 'プロフィール編集', edit_user_registration_path, :class => 'navbar-link' %></li>
-                  <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
-              <% else %>
-                  <li><%= link_to "ユーザ登録", new_user_registration_path, :class => 'navbar-link'  %></li>
-                  <li><%= link_to "ログイン", new_user_session_path, :class => 'navbar-link'  %></li>
-              <% end %>
-              <li><%= link_to "掲載方法", "/pages/add"  %></li>
-              <li><%= link_to "このサイトについて", "/pages/about"  %></li>
-              <li><%= link_to "お問い合わせ", "/pages/contact"  %></li>
-              <li><%= link_to('琉球.rb','https://www.facebook.com/groups/ruby.okinawa/') %></li>
-            </ul>
-          </div><!--/.well -->
-        </div><!--/span-->
-      </div><!--/row-->
+      </div>
+    </div>
       <footer>
-        <p>Copyright(C)2014 by <%= link_to('琉球.rb','https://www.facebook.com/groups/ruby.okinawa/') %> All Right Reserved.</p>
+        <div class="wrapper">
+            <p>Copyright(C)2014 by <%= link_to('琉球.rb','https://www.facebook.com/groups/ruby.okinawa/') %> All Right Reserved.</p>
+        </div>
       </footer>
 
     </div> <!-- /container -->

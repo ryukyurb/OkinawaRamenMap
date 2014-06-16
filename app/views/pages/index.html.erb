@@ -1,41 +1,16 @@
 <h1>沖縄のラーメン屋データベース</h1>
+<h2>新着店舗</h2>
+<table width="100%">
 
-<table>
-  <thead>
-  <tr>
-    <th>店名</th>
-    <th>Kana</th>
-    <th>Category</th>
-    <th>住所</th>
-    <th>電話番号</th>
-    <th>Tag</th>
-    <th>Gps</th>
-    <th>Delivary</th>
-    <th>Hour</th>
-    <th>Holiday</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-  </thead>
 
   <tbody>
   <% @shops.each do |shop| %>
       <tr>
-        <td><%= shop.name %></td>
-        <td><%= shop.kana %></td>
-        <td><%= shop.category %></td>
-        <td><%= shop.address %></td>
-        <td><%= shop.phone %></td>
-        <td><%= shop.tag %></td>
-        <td><%= shop.gps %></td>
-        <td><%= shop.delivary %></td>
-        <td><%= shop.hour %></td>
-        <td><%= shop.holiday %></td>
-        <td><%= link_to 'Show', shop %></td>
-        <td><%= link_to 'Edit', edit_shop_path(shop) %></td>
-        <td><%= link_to 'Destroy', shop, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <td><%= link_to(shop.name,shop) %>
+        <br ><%= shop.address %>
+        <br /><%= shop.phone %>
+        </td>
+       </tr>
   <% end %>
   </tbody>
 </table>

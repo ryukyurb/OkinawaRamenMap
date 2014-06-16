@@ -1,54 +1,92 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @shop.name %>
-</p>
-
-<p>
-  <strong>Kana:</strong>
-  <%= @shop.kana %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @shop.category %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @shop.address %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @shop.phone %>
-</p>
-
-<p>
-  <strong>Tag:</strong>
-  <%= @shop.tag %>
-</p>
-
-<p>
-  <strong>Gps:</strong>
-  <%= @shop.gps %>
-</p>
-
-<p>
-  <strong>Delivary:</strong>
-  <%= @shop.delivary %>
-</p>
-
-<p>
-  <strong>Hour:</strong>
-  <%= @shop.hour %>
-</p>
-
-<p>
-  <strong>Holiday:</strong>
-  <%= @shop.holiday %>
-</p>
-
+<div class="title">
+  <h1><%= @shop.name %></h1>
+  <p class="kana"><%= @shop.kana %></p>
+  <p class="address"><%= @shop.address %></p>
+</div>
+<div class="infomain">
+<div class="info">
+  <table>
+    <tr>
+      <th>店名</th>
+      <td><%= @shop.name %>（<%= @shop.kana %>）</td>
+    </tr>
+    <tr>
+      <th>住所</th>
+      <td><%= @shop.address %></td>
+    </tr>
+    <tr>
+      <th>電話</th>
+      <td><%= @shop.phone %></td>
+    </tr>
+    <tr>
+      <th>営業時間</th>
+      <td><%= @shop.hour %></td>
+    </tr>
+    <tr>
+      <th>定休日</th>
+      <td><%= @shop.holiday %></td>
+    </tr>
+    <tr>
+      <th>配達</th>
+      <td><%= @shop.delivary %></td>
+    </tr>
+    <tr>
+      <th>駐車場</th>
+      <td><%= @shop.gps %></td>
+    </tr>
+    <tr>
+      <th>カテゴリ</th>
+      <td><%= @shop.category %></td>
+    </tr>
+    <tr>
+      <th>タグ</th>
+      <td><%= @shop.tag %></td>
+    </tr>
+  </table>
+</div>
+<div class="info2">
+  <div class="fb-like" data-href="http://ramen098.herokuapp.com/shops/<%= @shop.id %>" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+</div>
+</div>
+<% if user_signed_in? %>
+<span class="clearfix"><br /></span>
+<div class="comment">
+  <h3>コメントを投稿する</h3>
+    <%= form_for(@cmt) do |f| %>
+        <div class="control-group">
+          <label class="control-label" for="inputEmail">食べたもの</label>
+          <div class="controls"><%= f.text_field :title %></div>
+        </div>
+        <div class="control-group">
+        <label class="control-label" for="inputEmail">評価</label>
+        <div class="controls">
+          <%= f.select :star,{'★'=>'1','★★'=>'2','★★★'=>'3','★★★★'=>'4','★★★★★★'=>'5'},:selected=>3 %>
+        </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="inputEmail">感想</label>
+          <div class="controls"><%= f.text_area :message %></div>
+        </div>
+        <div class="control-group">
+          <div class="controls"><button type="submit" class="btn">感想を書く</button></div>
+        </div>
+      <%= f.hidden_field :shop_id,:value=>@shop.id %>
+      <%= f.hidden_field :user_id,:value=>current_user.id %>
+    <% end %>
+</div>
+<% end %>
+<div class="comment">
+<% @comments.each do |comment| %>
+  <% comment.title %>
+  <% comment.message %>
+<% end %>
+</div>
+<span class="clearfix"><br /></span>
+<div class="fbcomment">
+  <div class="fb-comments" data-href="http://ramen098.herokuapp.com/shops/<%= @shop.id %>" data-numposts="5" data-colorscheme="light"></div>
+</div>
+<span class="clearfix"><br /></span>
 <%= link_to 'Edit', edit_shop_path(@shop) %> |
 <%= link_to 'Back', shops_path %>
+<% content_for :title do %><%= @shop.name %>/<%= @shop.address %> - 沖縄ラーメン屋マップ<% end %>

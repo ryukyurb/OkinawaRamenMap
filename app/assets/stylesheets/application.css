@@ -27,7 +27,7 @@ body{
     clear:both;
 }
 .header{
-    background-color: #673300;
+    background-color: #f8eed8;
     height:110px;
     margin: 0px;
     padding: 0px;
@@ -57,6 +57,79 @@ body{
     height: 90px;
     text-align: center;
 }
+.nav{
+    height: 40px;
+    background-color: #b40000;
+}
+.nav ul{
+    margin: 0px;
+    padding: 0px;
+    list-style:none;
+}
+.nav ul li{
+    height: 40px;
+    float: left;
+    width: 135px;
+}
+.main{}
+.title{
+    width: 560px;
+    padding: 10px;
+    background-color: #f8eed8;
+    margin-bottom: 20px;
+}
+.title h1{
+    font-size: 140% !important;
+    font-weight: bold !important;
+    border: none !important;
+}
+.title .kana{
+    font-size: 70%;
+    margin: 0px 0px 0px 20px;
+}
+.title .address{
+    font-size: 90%;
+    margin: 0px 0px 0px 20px;
+}
+.infomain{
+    margin: 20px 0px;
+}
+.info{
+    float: left;
+    width: 392px;
+}
+.info table{
+    width: 372px;
+    padding: 10px;
+}
+.info table tr{
+    padding: 0px;
+    margin-bottom: 1px;
+    border-bottom: 1px solid #000;
+}
+.info table tr th{
+    background-color: #eee;
+    text-align: right;
+    font-size: 80%;
+    padding: 5px;
+    width: 20%;
+}
+.info table tr td{
+    text-align: left;
+    font-size: 80%;
+    padding: 5px;
+    width: 80%;
+}
+.info2{
+    float: left;
+    width:168px;
+}
+.comment{
+    margin: 20px 0px;
+}
+.fbcomment{
+    margin: 20px 0px;
+}
 .sideleft{
     float: left;
     width:180px;
@@ -81,4 +154,7 @@ footer{
     border-top: 1px solid #000;
     margin: 20px 0px;
     padding: 20px 0px;
+}
+.clearfix{
+    clear: both;
 }

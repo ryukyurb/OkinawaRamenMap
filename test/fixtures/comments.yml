@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  shop_id: 1
+  title: MyString
+  message: MyText
+  star: 1
+  photo: 
+
+two:
+  user_id: 1
+  shop_id: 1
+  title: MyString
+  message: MyText
+  star: 1
+  photo: 

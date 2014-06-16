@@ -35,6 +35,18 @@
     <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
 
     <%= javascript_include_tag "application" %>
+    <meta property="og:title" content="<%= content_for?(:title) ? yield(:title) : "沖縄ラーメン屋マップ（仮称）" %>">
+    <meta property="og:type" content="article">
+    <meta property="og:description" content="<%= content_for?(:title) ? yield(:title) : "沖縄ラーメン屋マップ（仮称）" %>">
+    <meta property="og:site_name" content="沖縄ラーメン屋マップ">
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.0";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
   </head>
   <body>
     <header class="header">
@@ -45,33 +57,25 @@
         <script type="text/javascript" src="http://ir-jp.amazon-adsystem.com/s/ads.js"></script></div>
       </div>
     </header>
-    <div class="navbar navbar-fluid-top">
-      <div class="navbar-inner">
-        <div class="container-fluid">
-          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="#">沖縄ラーメン店データベース（仮称</a>
-          <div class="container-fluid nav-collapse">
-            <ul class="nav">
-              <li><%= link_to "人気のラーメン店", "/path1"  %></li>
-              <li><%= link_to "地域のラーメン店", "/path2"  %></li>
-              <li><%= link_to "ジャンルからラーメン店を探す", "/path1"  %></li>
-              <% if user_signed_in? %>
-                  <li><%= link_to 'プロフィール編集', edit_user_registration_path, :class => 'navbar-link' %></li>
-                  <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
-              <% else %>
-                  <li><%= link_to "ユーザ登録", new_user_registration_path, :class => 'navbar-link'  %></li>
-                  <li><%= link_to "ログイン", new_user_session_path, :class => 'navbar-link'  %></li>
-              <% end %>
-              <li><%= link_to('琉球.rb','https://www.facebook.com/groups/ruby.okinawa/') %></li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div>
+    <nav class="nav">
+      <div class="wrapper">
+        <ul>
+          <li><%= link_to image_tag('/images/btn01.png',{:alt=>'沖縄ラーメン屋マップ'}), "http://ramen098.herokuapp.com/"  %></li>
+          <li><%= link_to image_tag('/images/btn02.png',{:alt=>'人気のラーメン店'}), "/path1"  %></li>
+          <li><%= link_to image_tag('/images/btn03.png',{:alt=>'地域のラーメン店'}), "/path1"  %></li>
+          <li><%= link_to image_tag('/images/btn04.png',{:alt=>'ジャンルからラーメン店を探す'}), "/path1"  %></li>
+          <li><%= link_to image_tag('/images/btn05.png',{:alt=>'沖縄ラーメン屋マップ'}), "/path1"  %></li>
+          <% if user_signed_in? %>
+              <li><%= link_to image_tag('/images/btn06.png',{:alt=>'プロフィール編集'}), edit_user_registration_path  %></li>
+              <li><%= link_to image_tag('/images/btn07.png',{:alt=>'ログアウト'}), destroy_user_session_path  %></li>
+          <% else %>
+              <li><%= link_to image_tag('/images/btn08.png',{:alt=>'ユーザ登録'}), new_user_registration_path  %></li>
+              <li><%= link_to image_tag('/images/btn09.png',{:alt=>'ログイン'}), new_user_session_path  %></li>
+          <% end %>
+          <li><%= link_to image_tag('/images/btn10.png',{:alt=>'琉球.rb'}), "https://www.facebook.com/groups/ruby.okinawa/"  %></li>
+        </ul>
       </div>
-    </div>
+    </nav>
     <div class="wrapper">
       <div class="sideleft">
         <p>

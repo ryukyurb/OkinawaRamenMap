@@ -10,6 +10,9 @@ class ShopsController < ApplicationController
   # GET /shops/1
   # GET /shops/1.json
   def show
+
+    @cmt = Comment.new
+    @comments = Comment.find_all_by_shop_id(params[:id])
   end
 
   # GET /shops/new

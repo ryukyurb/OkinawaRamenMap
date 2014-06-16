@@ -1,11 +1,14 @@
 OkinawaRamenMap::Application.routes.draw do
+  resources :comments
+
   resources :shops
 
   root 'pages#index'
   get 'pages/login'
   get 'pages/logout'
   get 'pages/about'
-
+  get 'pages/add'
+  get 'pages/contact'
   resource :pages
 
   devise_for :users

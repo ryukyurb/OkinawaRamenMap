@@ -78,8 +78,8 @@
 <% end %>
 <div class="comment">
 <% @comments.each do |comment| %>
-  <% comment.title %>
-  <% comment.message %>
+<div class="author"><%= comment.title %>（<%= comment.shop.name %>）</div>
+<div class="cmt"><%= comment.message %></div>
 <% end %>
 </div>
 <span class="clearfix"><br /></span>

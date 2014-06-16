@@ -127,6 +127,12 @@ body{
 .comment{
     margin: 20px 0px;
 }
+.author{
+    font-weight: bold;
+}
+.cmt{
+    line-height: 1.8em;
+}
 .fbcomment{
     margin: 20px 0px;
 }

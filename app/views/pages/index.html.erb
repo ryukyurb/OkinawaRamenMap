@@ -6,9 +6,7 @@
   <tbody>
   <% @shops.each do |shop| %>
       <tr>
-        <td><%= link_to(shop.name,shop) %>
-        <br ><%= shop.address %>
-        <br /><%= shop.phone %>
+        <td><b><%= link_to(shop.name,shop) %></b>&nbsp;<%= shop.address %>&nbsp;<%= shop.phone %>
         </td>
        </tr>
   <% end %>

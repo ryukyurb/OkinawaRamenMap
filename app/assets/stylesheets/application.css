@@ -72,6 +72,27 @@ body{
     width: 135px;
 }
 .main{}
+.shop{
+    margin: 20px 0px;
+}
+.shop ul{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+.shop ul li{
+    height: 80px;
+    border-bottom: 1px solid #aaa;
+    padding: 15px 0px;
+    clear: both;
+}
+.thumbnail{
+    display: block;
+    width: 80px;
+    height: 80px;
+    float: left;
+    margin-right: 10px;
+}
 .title{
     width: 560px;
     padding: 10px;

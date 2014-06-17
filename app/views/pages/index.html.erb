@@ -1,18 +1,13 @@
 <h1>沖縄のラーメン屋データベース</h1>
 <h2>新着店舗</h2>
-<table width="100%">
-
-
-  <tbody>
+<div class="shop">
+<ul>
   <% @shops.each do |shop| %>
-      <tr>
-        <td><b><%= link_to(shop.name,shop) %></b>&nbsp;<%= shop.address %>&nbsp;<%= shop.phone %>
-        </td>
-       </tr>
+  <li><span class="thumbnail"></span><b><%= link_to(shop.name,shop) %></b>
+    <br /><%= shop.address %>&nbsp;<%= shop.phone %></li>
   <% end %>
-  </tbody>
-</table>
-
+</ul>
+</div>
 <br>
 <% if user_signed_in? %>
 <%= link_to 'New Shop', new_shop_path %>

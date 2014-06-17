@@ -4,7 +4,7 @@ class ShopsController < ApplicationController
   # GET /shops
   # GET /shops.json
   def index
-    @shops = Shop.all
+    @shops = Shop.all.order("created_at DESC")
   end
 
   # GET /shops/1
@@ -12,7 +12,7 @@ class ShopsController < ApplicationController
   def show
 
     @cmt = Comment.new
-    @comments = Comment.find_all_by_shop_id(params[:id])
+    @comments = Comment.order("created_at DESC").find_all_by_shop_id(params[:id])
   end
 
   # GET /shops/new

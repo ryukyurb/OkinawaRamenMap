@@ -47,6 +47,12 @@
 </div>
 <div class="info2">
   <div class="fb-like" data-href="http://ramen098.herokuapp.com/shops/<%= @shop.id %>" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+  <p align="center"><a href="http://px.a8.net/svt/ejp?a8mat=2BPX2C+2Q8JLE+1XGK+5YF1SX" target="_blank">
+    <img border="0" width="125" height="125" alt="" src="http://www26.a8.net/svt/bgt?aid=140617380165&wid=001&eno=01&mid=s00000009002036014000&mc=1"></a>
+    <img border="0" width="1" height="1" src="http://www14.a8.net/0.gif?a8mat=2BPX2C+2Q8JLE+1XGK+5YF1SX" alt=""></p>
+  <p align="center"><a href="http://px.a8.net/svt/ejp?a8mat=2BPX2C+2RFESY+2U8+1HQL29" target="_blank">
+    <img border="0" width="125" height="125" alt="" src="http://www29.a8.net/svt/bgt?aid=140617380167&wid=001&eno=01&mid=s00000000368009026000&mc=1"></a>
+    <img border="0" width="1" height="1" src="http://www14.a8.net/0.gif?a8mat=2BPX2C+2RFESY+2U8+1HQL29" alt=""></p>
 </div>
 </div>
 <% if user_signed_in? %>
@@ -80,6 +86,7 @@
 <% @comments.each do |comment| %>
 <div class="author"><%= comment.title %>（<%= comment.shop.name %>）</div>
 <div class="cmt"><%= comment.message %></div>
+<div class="meta"><%= comment.created_at.strftime('%Y/%m/%d %H:%M') %></div>
 <% end %>
 </div>
 <span class="clearfix"><br /></span>

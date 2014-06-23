@@ -28,7 +28,9 @@ class ShopsController < ApplicationController
   # POST /shops.json
   def create
     @shop = Shop.new(shop_params)
-    @shop.icon = params[:shop][:icon].read
+    if params[:shop][:icon].present? then
+      @shop.icon = params[:shop][:icon].read
+    end
     respond_to do |format|
       if @shop.save
         format.html { redirect_to @shop, notice: 'Shop was successfully created.' }
@@ -43,7 +45,9 @@ class ShopsController < ApplicationController
   # PATCH/PUT /shops/1
   # PATCH/PUT /shops/1.json
   def update
-    @shop.icon = params[:shop][:icon].read
+    if params[:shop][:icon].present? then
+      @shop.icon = params[:shop][:icon].read
+    end
     respond_to do |format|
       if @shop.update(shop_params)
         format.html { redirect_to @shop, notice: 'Shop was successfully updated.' }

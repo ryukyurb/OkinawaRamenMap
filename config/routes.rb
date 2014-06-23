@@ -2,7 +2,11 @@ OkinawaRamenMap::Application.routes.draw do
   resources :comments
 
   resources :shops
-
+  resources :shops do
+    member do
+      get 'show_image'
+    end
+  end
   root 'pages#index'
   get 'pages/login'
   get 'pages/logout'

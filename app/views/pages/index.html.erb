@@ -3,7 +3,7 @@
 <div class="shop">
 <ul>
   <% @shops.each do |shop| %>
-  <li><span class="thumbnail"></span><b><%= link_to(shop.name,shop) %></b>
+  <li><span class="thumbnail"><%= image_tag(show_image_shop_path(shop),:size=>"80x80") %></span><b><%= link_to(shop.name,shop) %></b>
     <br /><%= shop.address %>&nbsp;<%= shop.phone %></li>
   <% end %>
 </ul>

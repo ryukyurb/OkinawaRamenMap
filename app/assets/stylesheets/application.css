@@ -81,7 +81,7 @@ body{
     padding: 0px;
 }
 .shop ul li{
-    height: 80px;
+    height: 110px;
     border-bottom: 1px solid #aaa;
     padding: 15px 0px;
     clear: both;
@@ -92,6 +92,10 @@ body{
     height: 80px;
     float: left;
     margin-right: 10px;
+    border: none !important;
+}
+.thumbnail img{
+    border: none !important;
 }
 .title{
     width: 560px;

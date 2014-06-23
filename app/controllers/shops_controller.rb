@@ -28,7 +28,7 @@ class ShopsController < ApplicationController
   # POST /shops.json
   def create
     @shop = Shop.new(shop_params)
-
+    @shop.icon = params[:shop][:icon].read
     respond_to do |format|
       if @shop.save
         format.html { redirect_to @shop, notice: 'Shop was successfully created.' }
@@ -63,7 +63,10 @@ class ShopsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+  def show_image
+    @image = Shop.find(params[:id])
+    send_data @image.icon, :type => 'image/jpeg', :disposition => 'inline'
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_shop
